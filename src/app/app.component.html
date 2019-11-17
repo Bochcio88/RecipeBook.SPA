@@ -1,0 +1,36 @@
+<app-header
+(select)="router($event)"
+></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <app-recipes *ngIf="routing === 'recipe'"></app-recipes>
+          <app-shopping-list *ngIf="routing === 'shopping-list'"></app-shopping-list>    
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <app-cockpit 
+    (svCreated)="onServerCreated($event)"
+    (bpCreated)="onBlueprintCreated($event)"
+    (apiCreated)="onAPICreated($event)">
+</app-cockpit>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+          <button class="btn btn-primary" (click)="OnFirstChange()">Change first element</button>
+          <button class="btn btn-danger" (click)="OnDestroy()">Destroy first element</button>
+
+        <app-server-element *ngFor="let serverElement of serverElements"
+            [srvElement]="serverElement"
+            [name]=serverElement.name>
+            <p #content>
+                <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+                <strong *ngIf="serverElement.type === 'blueprint'" style="color: rgb(0, 110, 255)">{{ serverElement.content }}</strong>
+                <strong *ngIf="serverElement.type === 'api'" style="color: rgb(4, 124, 50)">{{ serverElement.content }}</strong>
+              </p>
+        </app-server-element>
+      </div>
+    </div>
+  </div> -->
